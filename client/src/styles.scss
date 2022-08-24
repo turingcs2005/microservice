@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'src/app/app-data/color-theme.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.padded {
+    padding: 20px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.link {
+    @extend .pointer;
+    color: $accent;
+}
+  

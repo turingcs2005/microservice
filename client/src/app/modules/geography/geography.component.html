@@ -1,0 +1,24 @@
+<div class="mat-h2">Geography APIs</div>
+
+<p>All APIs below use GET</p>
+<ul>
+    <li>City validator: check if a city belongs to a state</li>
+    <li>State validator: check if a sate abbreviation is a valid US state</li>
+    <li>Postal code validator: check if a ZIP code is a valid US ZIP code</li>
+    <li>City list: return an array of city names for a given state</li>
+    <li>State list: return an array of US state name and state abbreviation</li>
+</ul>
+
+<p>URL and parameters</p>
+<ul>
+    <li>'/api/geography/validatePostCode/:postCode'</li>
+    <li>'/api/geography/cityArray/:state'</li>
+    <li>'/api/geography/stateArray'</li>
+    <li>'/api/geography/validateState/:state'</li>
+    <li>'/api/geography/validateCity/:state/:city'</li>
+</ul>
+
+<p>If your city name has special character(s), please encode them correctly following
+    <a href="https://www.w3schools.com/tags/ref_urlencode.ASP" target="_blank" class="link">URL encoding standard</a>.</p>
+
+<p>For example, if you want to check if 'Fall River' is a valid city in Massachusetts, use '/api/geography/validateCity/MA/Fall%20River'.</p>
