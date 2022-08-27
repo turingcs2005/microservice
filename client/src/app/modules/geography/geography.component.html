@@ -7,6 +7,7 @@
     <li>Postal code validator: check if a ZIP code is a valid US ZIP code</li>
     <li>City list: return an array of city names for a given state</li>
     <li>State list: return an array of US state name and state abbreviation</li>
+    <li>ZIP code list: return an array of US ZIP codes given a state abbreviation and city name</li>
 </ul>
 
 <p>URL and parameters</p>
@@ -16,9 +17,11 @@
     <li>'/api/geography/stateArray'</li>
     <li>'/api/geography/validateState/:state'</li>
     <li>'/api/geography/validateCity/:state/:city'</li>
+    <li>'/api/geography/zipCodeArray/:state/:city'</li>
 </ul>
 
-<p>If your city name has special character(s), please encode them correctly following
+<p>If your city name has special character(s), you need to encode them (either via express's urlencoded middleware, or manually) correctly following
     <a href="https://www.w3schools.com/tags/ref_urlencode.ASP" target="_blank" class="link">URL encoding standard</a>.</p>
 
-<p>For example, if you want to check if 'Fall River' is a valid city in Massachusetts, use '/api/geography/validateCity/MA/Fall%20River'.</p>
+<p>For example, if you want to check if 'Fall River' is a valid city in Massachusetts using your browser, 
+    use '/api/geography/validateCity/MA/Fall%20River'.</p>

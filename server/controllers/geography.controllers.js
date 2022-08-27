@@ -2,6 +2,7 @@ const Country = require('country-state-city').Country;
 const State = require('country-state-city').State;
 const City = require('country-state-city').City;
 const { postcodeValidator } = require('postcode-validator');
+const zipcodes = require('zipcodes');
 
 // check if post code is valid US ZIP code
 exports.validatePostCode = (req, res) => {
@@ -43,5 +44,14 @@ exports.validateCity = (req, res) => {
     const city = req.params.city;
     res.status(200).send({
         valid: City.getCitiesOfState('US', state).map(v => v.name).includes(city)
+    });
+}
+
+// return an array of ZIP codes for a city 
+exports.zipCodeArray = (req, res) => {
+    const state = req.params.state;
+    const city = req.params.city;
+    res.status(200).send({
+        zip_codes: zipcodes.lookupByName(city, state).map( x => x.zip )
     });
 }
